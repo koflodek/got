@@ -27,6 +27,28 @@ class Map extends CI_Controller {
 		$style[] = load_js('jQuery2.0.2.js');
 		$style[] = load_js('jquery-jvectormap-1.2.2.min.js');
 		$style[] = load_js('map.js');
+		// foreach ($arr as &$val) {
+		// 	$val = '<'.$val.'>';
+		// 	echo "$val";
+		// }
+		$data['style'] = $style;
+		$this->load->view('template/template', $data);
+	}
+
+	public function map2()
+	{
+		$query = $this->db->query("SELECT * FROM houses");
+		$data['content'] = 'map2';
+		$style = array();
+		$style[] = load_css('basic.css');
+		$style[] = load_css('jquery-jvectormap-1.2.2.css');
+		$style[] = load_js('jQuery2.0.2.js');
+		$style[] = load_js('jquery-jvectormap-1.2.2.min.js');
+		$style[] = load_js('map.js');
+		// foreach ($arr as &$val) {
+		// 	$val = '<'.$val.'>';
+		// 	echo "$val";
+		// }
 		$data['style'] = $style;
 		$this->load->view('template/template', $data);
 	}
